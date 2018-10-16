@@ -1,0 +1,31 @@
+
+#suspended
+{
+    background-color: #1c1d8b;
+    position: fixed;
+    margin: 0;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+.icon
+{
+    width: 60px;
+}
+
+body
+{
+    padding:36px;
+    margin: 24px;
+    background-color: #4a82b3;
+}
+.frame
+{
+    padding:24px;
+    margin: 12px;
+    background-color: #fff6f4;
+}
+h1{
+     text-align: center;
+ }
