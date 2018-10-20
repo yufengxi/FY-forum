@@ -11,21 +11,38 @@
 
 .icon
 {
-    width: 60px;
+    width: 120px;
+    margin: 12px;
+    display: inline-block;
+    position: relative;
+    left:10%;
 }
 
-body
+.backGround
+{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index: -1000;
+    height:100vh;
+    width: 100vm;
+    opacity: 0.78;
+}
+.backGround img
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+section
 {
     padding:36px;
     margin: 24px;
-    background-color: #4a82b3;
 }
-.frame
-{
-    padding:24px;
-    margin: 12px;
-    background-color: #fff6f4;
-}
+
 h1{
      text-align: center;
+     color: azure;
  }
