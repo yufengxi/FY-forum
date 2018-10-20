@@ -7,13 +7,26 @@
     width:100%;
     top:0;
     left:0;
+    display: inline;
 }
+ul
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    vertical-align: middle;
+ }
+li{
 
+}
+a{
+    color: #688eb3;
+    text-decoration: none;
+}
 .icon
 {
     width: 120px;
     margin: 12px;
-    display: inline-block;
     position: relative;
     left:10%;
 }
@@ -28,7 +41,7 @@
     z-index: -1000;
     height:100vh;
     width: 100vm;
-    opacity: 0.78;
+    opacity: 0.8;
 }
 .backGround img
 {
@@ -45,4 +58,19 @@ section
 h1{
      text-align: center;
      color: azure;
+     font-size: 28px;
+     padding: 24px;
  }
+h2{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Fangsong";
+}
+.block
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    padding:2.5%;
+    background: whitesmoke;
+    opacity: 0.7;
+}
