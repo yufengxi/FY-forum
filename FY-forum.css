@@ -125,13 +125,31 @@ button
 }
 .login
 {
+    width:480px;
+    height:480px;
     border-radius: 4px;
     border-width: 0;
     box-shadow: 5px 5px 10px #111111;
-    margin:108px;
-    padding:72px;
+    margin:auto;
     opacity: 0.8;
     background-color: snow;
+
+}
+table
+{
+    padding:72px;
+    margin: auto;
+}
+td > a:hover
+{
+    color: #1c1d8b;
+}
+input[type="submit"]
+{
+    width:100%;
+    background: #3399cc;
+    padding:4%;
+    border:0;
 }
 
 
