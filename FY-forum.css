@@ -73,6 +73,7 @@ h1{
      color: azure;
      font-size: 32px;
      padding: 28px;
+    text-shadow: 1px 1px 2px #dfdfdf;
  }
 h2{
     text-align: center;
@@ -97,8 +98,8 @@ h2{
     border-width: 0;
     box-shadow: 5px 5px 10px #111111;
     top:10%;
-    margin:3%;
-    padding:3%;
+    margin:48px;
+    padding:48px;
     opacity: 0.9;
     text-shadow: 2px 2px 3px darkgrey;
     background-color: snow;
@@ -110,8 +111,8 @@ textarea
     border-radius: 8px;
     border-width: 0;
     box-shadow: 5px 5px 10px #111111;
-    margin:3%;
-    padding:3%;
+    margin:48px;
+    padding:48px;
     height: 450px;
     opacity: 0.8;
     text-shadow: 2px 2px 4px darkgrey;
@@ -122,4 +123,15 @@ button
 {
     width:60px;
 }
+.login
+{
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: 5px 5px 10px #111111;
+    margin:108px;
+    padding:72px;
+    opacity: 0.8;
+    background-color: snow;
+}
+
 
