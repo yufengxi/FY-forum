@@ -23,13 +23,13 @@ ul
     margin:0;
     padding:0;
     display: inline-block;
- }
+}
 li{
     float: left;
     position:relative;
-    top:25%;
+    top:27%;
     width:80px;
-    font-size:18px;
+    font-size:17px;
 }
 
 .icon
@@ -69,12 +69,12 @@ section
 }
 
 h1{
-     text-align: center;
-     color: azure;
-     font-size: 32px;
-     padding: 28px;
+    text-align: center;
+    color: azure;
+    font-size: 32px;
+    padding: 28px;
     text-shadow: 1px 1px 2px #dfdfdf;
- }
+}
 h2{
     text-align: center;
     font-size: 24px;
@@ -93,13 +93,15 @@ h2{
 }
 .input1
 {
+    position:relative;
+    left:3%;
     width:80%;
     border-radius: 5px;
     border-width: 0;
     box-shadow: 5px 5px 10px #111111;
     top:10%;
-    margin:48px;
-    padding:48px;
+    margin:24px 48px 24px 48px;
+    padding:24px 48px 24px 48px;
     opacity: 0.9;
     text-shadow: 2px 2px 3px darkgrey;
     background-color: snow;
@@ -107,33 +109,36 @@ h2{
 }
 textarea
 {
+    position:relative;
+    left:3%;
     width:80%;
     border-radius: 8px;
     border-width: 0;
     box-shadow: 5px 5px 10px #111111;
-    margin:48px;
-    padding:48px;
+    margin:24px 48px 24px 48px;
+    padding:24px 48px 24px 48px;
     height: 450px;
     opacity: 0.8;
     text-shadow: 2px 2px 4px darkgrey;
     background-color: snow;
     font-size:18px;
 }
-button
+.post
 {
-    width:60px;
+    position:relative;
+    left:45%;
+    top:5%;
 }
 .login
 {
     width:480px;
     height:480px;
-    border-radius: 4px;
+    border-radius: 5px;
     border-width: 0;
-    box-shadow: 5px 5px 10px #111111;
-    margin:auto;
+    box-shadow: 5px 5px 10px #000000;
+    margin:80px 33% 0 33%;
     opacity: 0.8;
     background-color: snow;
-
 }
 table
 {
@@ -144,11 +149,17 @@ td > a:hover
 {
     color: #1c1d8b;
 }
+td > input
+{
+    padding:5%;
+    margin:3%;
+    width:80%;
+    font-size: 16px;
+}
 input[type="submit"]
 {
-    width:100%;
+    width:92%;
     background: #3399cc;
-    padding:4%;
     border:0;
 }
 
