@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href = "/static/css/FY-forum.css" >
-    <link href = "/static/js/FY-forum.js" rel="script">
+
     <meta charset="UTF-8">
+    {% if title %}                          
+    <title>{{title}}</title>      
+    {% else %}
     <title>FY forum</title>
+    {% endif %}
 </head>
 
 
@@ -30,7 +34,7 @@
                     飞扬技术论坛
                 </h1>
                 <div class="block">
-                    <a href="notice"><h2>公告！</h2></a>
+                    <a href="/notice"><h2>公告！</h2></a>
                 </div>
             </div>
     </section>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jQuery3" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://H:/webstorm/package/jQuery/jQuery3.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://H:/webstorm/package/jQuery/jQuery3.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
