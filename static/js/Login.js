@@ -20,14 +20,14 @@ $(document).ready(function () {
                 success: function(result)       //如果注册成功返回true，用户名被占有则返回false
                 {
                     var logindata=JSON.parse(result);
-                    if(logindata.checkResult == null){
+                    if(logindata == null){
                         alert("该用户不存在！！！");
                     }
-                    else if (logindata.checkResult === true) {
+                    else if (logindata == true) {
                         alert("登陆成功！！！");
                         $(location).attr('href', '/home');
                     }
-                    else if (logindata.checkResult === false){
+                    else if (logindata == false){
                         alert("密码错误！！！");
                     }
                 }
