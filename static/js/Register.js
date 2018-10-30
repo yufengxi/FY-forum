@@ -18,24 +18,23 @@ $(document).ready(function () {
         else {
             $.ajax({
                 type: "post",
-                url: "check",     //后台action
+                url: '/register',     //后台action
                 data:
                     {
                         username: UserName,
                         password: Password1
                     },          //username为要向后台传入的参数名称
-                dataType: "text",
                 success: function(result)       //如果注册成功返回true，用户名被占有则返回false
                 {
                     var logindata=JSON.parse(result);
-                    if(logindata.checkResult == null){
+                    if(logindata == null){
                         alert("链接超时");
                     }
-                    else if (logindata.checkResult === true) {
+                    else if (logindata == true) {
                         alert("注册成功！！！");
                         $(location).attr('href', '/home');
                     }
-                    else if (logindata.checkResult === false){
+                    else if (logindata == false){
                         alert("用户名已被注册！！！");
                     }
                 }

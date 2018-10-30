@@ -10,13 +10,13 @@ $(document).ready(function () {
         else {
             $.ajax({
                 type: "post",
-                url: "check",     //发送请求的地址
+                url: '/login',     //发送请求的地址
                 data:
                     {
                         username: UserName,
                         password: Password
                     },          //向后台传入的参数
-                dataType: "text",
+                dataType: "json",
                 success: function(result)       //如果注册成功返回true，用户名被占有则返回false
                 {
                     var logindata=JSON.parse(result);

@@ -1,6 +1,8 @@
-from flask import Flask
-from flask import request
-from flask import render_template
+from flask import Flask, request, render_template, Response
+from sqlalchemy import Column, String, create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
 
 app = Flask(__name__)
 
@@ -17,12 +19,12 @@ def home():
 
 @app.route('/login', methods=['GET'])
 def login_form():
-    return render_template('login.html')
+    return render_template('login_in.html')
 
 
 @app.route('/register', methods=['GET'])
 def register_form():
-    return render_template('register.html')
+    return render_template('register_in.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -49,19 +51,19 @@ def login():
 
 
 @app.route('/register', methods=['POST'])
-def register(name=None):
+def register():
     username = request.form['username']
     password = request.form['password']
     re_password = request.form['re_password']
     # 建立连接，数据库
-    engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/User')
+    engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/user')
     DBSession = sessionmaker(bind=engine)
     # 创建Session:
     session = DBSession()
     # 查找数据
     user = session.query(User).filter(User.name == '%s' % username).one()
     if username == user.name:
-        return render_template('register.html', message='用户名已存在，请直接登录！', username=username)
+        return render_template('login.html', message='用户名已存在，请直接登录！', username=username)
     elif password != re_password:
         return render_template('register.html', message='两次输入的密码不一致，请检查后重新输入！', username=username)
     elif not username or not password:
@@ -74,7 +76,7 @@ def register(name=None):
     session.commit()
     # 关闭游标和连接
     session.close()
-    return render_template('register.html')
+    return render_template('home.html')
 
 
 @app.route('/notice', methods=['GET'])
