@@ -16,32 +16,27 @@ $(document).ready(function () {
         }
         //初步判断输入是否符合规范，如果符合规范则通过ajax传输给后台由后台进行查重
         else {
-            $.ajax({
-                type: "post",
-                url: '/register',     //后台action
-                data:
-                    {
-                        username: UserName,
-                        password: Password1
-                    },          //username为要向后台传入的参数名称
-                success: function(result)       //如果注册成功返回true，用户名被占有则返回false
-                {
-                    var logindata=JSON.parse(result);
-                    if(logindata == null){
-                        alert("链接超时");
-                    }
-                    else if (logindata == true) {
-                        alert("注册成功！！！");
-                        $(location).attr('href', '/home');
-                    }
-                    else if (logindata == false){
-                        alert("用户名已被注册！！！");
-                    }
-                }
-            });
-        }
+            $.post('/register',{
+				username:UserName,
+				password:Password,
+        }).then(function(data){
+			console.log(data);
+			/*if(Info.result=='true')
+			{
+				alert("成功");
+				console.log(Info.result);
+			}
+			else if(Info.result=="false")
+			{
+				alert('失败');
+				console.log(Info.result);
+			}
+			else{
+				alert("错误");
+			}*/
+		}
     });
-
+	}
 
 });
 

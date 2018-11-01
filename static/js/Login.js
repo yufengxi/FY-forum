@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#pw2").click(function(){
+    $("#bt2").click(function(){
         var UserName = $("#username").val();
         var Password=$("#password").val();
         if (UserName===""||Password==="")
@@ -25,7 +25,7 @@ $(document).ready(function () {
                     }
                     else if (logindata == true) {
                         alert("登陆成功！！！");
-                        $(location).attr('href', '/home');
+                     
                     }
                     else if (logindata == false){
                         alert("密码错误！！！");
