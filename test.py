@@ -4,7 +4,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import json
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9df940c569145b41e3f2b68dbe383f3ea3b39a61
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -40,7 +43,11 @@ def login():
     engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/FY')
     DBSession = sessionmaker(bind=engine)
     session = DBSession()
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9df940c569145b41e3f2b68dbe383f3ea3b39a61
     try:
         User = session.query(User).filter(User.name == '%s' % Username).one()
     except Exception as e:
