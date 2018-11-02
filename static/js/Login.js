@@ -14,22 +14,25 @@ $(document).ready(function () {
                 data:
                     {
                         username: UserName,
-                        password: Password
+                        password: Password,
                     },          //向后台传入的参数
                 dataType: "json",
-                success: function(result)       //如果注册成功返回true，用户名被占有则返回false
+                success: function(data)       //如果注册成功返回true，用户名被占有则返回false
                 {
-                    var logindata=JSON.parse(result);
-                    if(logindata == 'null'){
+                    
+                    if(data.result == 'null'){
                         alert("该用户不存在！！！");
                     }
-                    else if (logindata == 'true') {
+                    else if (data.result == true) {
                         alert("登陆成功！！！");
-                     
+						$(location).attr('href','/home');
                     }
-                    else if (logindata == 'false'){
+                    else if (data.result == false){
                         alert("密码错误！！！");
                     }
+					else{
+						alert("错误");
+					}
                 }
             });
         }
