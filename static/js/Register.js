@@ -22,7 +22,7 @@ $(document).ready(function () {
                 data:
                     {
                         username: UserName,
-                        password: Password,
+                        password: Password1,
                     },          //向后台传入的参数
                 dataType: "json",
                 success: function(data)       //如果注册成功返回true，用户名被占有则返回false
