@@ -20,25 +20,24 @@ $(document).ready(function () {
                 dataType: "json",
                 success: function(data)       //如果注册成功返回true，用户名被占有则返回false
                 {
-                    
+
                     if(data.result == 'null'){
                         alert("该用户不存在！！！");
                     }
                     else if (data.result == true) {
                         LoginName=UserName;
                         alert("登陆成功！！！");
-						$(location).attr('href','/home');
-						$("#changeable").test("Hi,"+LoginName);
+                        $(location).attr('href','/home');
                     }
                     else if (data.result == false){
                         alert("密码错误！！！");
                     }
-					else{
-						alert("错误");
-					}
+                    else{
+                        alert("错误");
+                    }
                 }
             });
         }
     });
-
+    if(LoginName!==null){$(".changeable").test("Hi,"+LoginName);}
 });
