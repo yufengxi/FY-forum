@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var LoginName=null;
     $("#bt2").click(function(){
         var UserName = $("#username").val();
         var Password=$("#password").val();
@@ -24,8 +25,10 @@ $(document).ready(function () {
                         alert("该用户不存在！！！");
                     }
                     else if (data.result == true) {
+                        LoginName=UserName;
                         alert("登陆成功！！！");
 						$(location).attr('href','/home');
+						$("#changeable").test("Hi,"+LoginName);
                     }
                     else if (data.result == false){
                         alert("密码错误！！！");
