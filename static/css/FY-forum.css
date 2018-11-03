@@ -156,12 +156,19 @@ td > input
     width:80%;
     font-size: 16px;
 }
-input[type="submit"]
+button
 {
     width:92%;
     background: #3399cc;
     border:0;
+	height:40px;
 }
+.button1
+{
+	position:relative;
+	left:3%;
+}
+
 
 
 

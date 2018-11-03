@@ -18,20 +18,16 @@ $(document).ready(function () {
         else {
             $.ajax({
                 type: "post",
-                url: '/login',     //发送请求的地址
+                url: '/register',     //发送请求的地址
                 data:
                     {
                         username: UserName,
-                        password: Password1,
+                        password: Password1
                     },          //向后台传入的参数
                 dataType: "json",
                 success: function(data)       //如果注册成功返回true，用户名被占有则返回false
                 {
-                    
-                    if(data.result == 'null'){
-                        alert("该用户不存在！！！");
-                    }
-                    else if (data.result == true) {
+                    if (data.result == true) {
                         alert("注册成功！！！");
 						$(location).attr('href','/home');
                     }
