@@ -168,7 +168,25 @@ button
 	position:relative;
 	left:3%;
 }
-
-
+p{
+    color:whitesmoke;
+}
+.author
+{
+    position: fixed;
+    left:65%;
+    font-size: 16px;
+}
+.time
+{
+    position: fixed;
+    left:80%;
+    font-size: 16px;
+}
+.paragraph
+ {
+    margin:150px 200px 150px 200px;
+    font-size: 20px;
+ }
 
 

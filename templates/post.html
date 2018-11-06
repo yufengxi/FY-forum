@@ -3,7 +3,8 @@
 <head>
     <link href = "/static/css/FY-forum.css" rel="stylesheet" >
     <script type="text/javascript" src="../static/js/jQuery3.js"></script>
-    <script type="text/javascript" src="../static/js/FY-forum.js"></script>
+    <script type="text/javascript" src="/static/js/Login.js"></script>
+    <script type="text/javascript" src="/static/js/Post.js"></script>
     <meta charset="UTF-8">
     <title>FY forum</title>
 </head>
@@ -27,13 +28,11 @@
         <img src="/static/FY-desktop.jpg"/>
     </div>
     <div>
-        <form>
-            <input class="input1" type="text" placeholder="主题 (3-20字）"/>
-            <textarea placeholder="正文 （最少50字）"></textarea>
-            <br>
-            <button style="left:80px; position:relative;">发帖</button>
-        </form>
-
+        <div action="/post" method="post">
+            <input class="input1" id="title" type="text" placeholder="标题 (3-20字）"/>
+            <textarea id="context" placeholder="正文 （最少50字）"></textarea>
+            <button style="left:80px; position:relative;" id="BtForPost">发帖</button>
+        </div>
     </div>
 
 </section>
