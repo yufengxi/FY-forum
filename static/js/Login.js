@@ -1,4 +1,3 @@
-var LoginName=null;
 $(document).ready(function () {
     $("#bt2").click(function(){
         var UserName = $("#username").val();
@@ -20,7 +19,6 @@ $(document).ready(function () {
                 dataType: "json",
                 success: function(data)       //如果注册成功返回true，用户名被占有则返回false
                 {
-
                     if(data.result == 'null'){
                         alert("该用户不存在！！！");
                     }
@@ -29,7 +27,7 @@ $(document).ready(function () {
                         alert("登陆成功！！！");
                         $(location).attr('href','/home');
                         $(".changeable a").remove();
-                        $(".changeable").test("Hi,"+LoginName);
+                        $(".changeable").text("Hi,"+LoginName);
                     }
                     else if (data.result == false){
                         alert("密码错误！！！");
@@ -41,5 +39,5 @@ $(document).ready(function () {
             });
         }
     });
-    if(LoginName!==null){$(".changeable").test("Hi,"+LoginName);}
+
 });

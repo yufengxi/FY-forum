@@ -86,13 +86,61 @@ def register():
     if Username == User.name:
         return jsonify({'result':False})
 
-@app.route('/notice', methods=['GET'])
-def notice():
-    return render_template('notice.html')
-
-@app.route('/post', methods=['GET'])
+@app.route('/post', methods=['GET', 'POST'])
 def post():
-    return render_template('post.html')
+    Title = request.form.get('title')
+    Context = request.form.get('context')
+    Username = request.form.get('username')
+    Time = request.form.get('time')
+	# 创建对象的基类:
+    Base = declarative_base()
+    # 定义Post对象:
+    class Post(Base):
+    # 表的名字:
+        __tablename__ = 'post'
+    # 表的结构:
+        name = Column(String(20), primary_key=True)
+        title = Column(String(100))
+        context = Column(String(10000))
+        time = Column(String(20))
+    # 建立连接，数据库
+    engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/FY')
+    DBSession = sessionmaker(bind=engine)
+    # 创建Session:
+    session = DBSession()
+	# 插入数据
+    new_post = Post(name=Username, title=Title, context=Context, time=Time)
+    session.add(new_post)
+    # 提交事务
+    session.commit()
+    # 关闭游标和连接
+    session.close()
+    return jsonify({'result':True})
+
+@app.route('/newpage', methods=['GET', 'POST'])
+def notice():
+    Title = request.form.get('title')
+    Username = request.form.get('username')
+	# 创建对象的基类:
+    Base = declarative_base()
+    # 定义Post对象:
+    class Post(Base):
+    # 表的名字:
+        __tablename__ = 'post'
+    # 表的结构:
+        name = Column(String(20), primary_key=True)
+        title = Column(String(100))
+        context = Column(String(10000))
+        time = Column(String(20))
+    # 建立连接，数据库
+    engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/FY')
+    DBSession = sessionmaker(bind=engine)
+    # 创建Session:
+    session = DBSession()
+	 # 查找数据
+    Post = session.query(Post).filter(Post.title == '%s' % Title).one()
+    data = {'time':Post.time,'context':Post.context}
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run()
