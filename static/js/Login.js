@@ -1,6 +1,6 @@
 $(document).ready(function () {
+    var LoginName=null;
     $("#bt2").click(function(){
-        $.cookie("username",null);
         var UserName = $("#username").val();
         var Password=$("#password").val();
         if (UserName===""||Password==="")
@@ -24,6 +24,7 @@ $(document).ready(function () {
                         alert("该用户不存在！！！");
                     }
                     else if (data.result == true) {
+                        LoginName=UserName;
                         alert("登陆成功！！！");
                         $(location).attr('href','/home');
                         $(".changeable a").remove();
@@ -40,7 +41,7 @@ $(document).ready(function () {
         }
     });
     if($.cookie("username")!==null){
-         $(".changeable").text("Hi,"+UserName);
+         $(".changeable").text("Hi,"+LoginName);
          $(".changeable").attr("color","#3399cc");
     }
 
