@@ -3,8 +3,7 @@ $(document).ready(function () {
       var Time=new Date();
       var Title=$("#title").val();
       var Context=$("#context").val();
-      var Username=LoginName;
-      if(Username==null)
+      if($.cookie("username")==undefined)
       {
           alert("请先登录！！！");
       }
@@ -25,14 +24,13 @@ $(document).ready(function () {
                   {
                       title:Title,
                       context:Context,
-                      username:Username,
+                      username:$.cookie("username"),
                       time:Time,
                   },
               dataType:"json",
               success:function (data)
               {
                   if (data.result == true) {
-                      LoginName=UserName;
                       alert("发帖成功！！！");
                       $(location).attr('href','/home');
                       $("#Body").append("<div class=\"block\">\n" +

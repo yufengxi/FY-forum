@@ -99,10 +99,11 @@ def post():
     # 表的名字:
         __tablename__ = 'post'
     # 表的结构:
-        name = Column(String(20), primary_key=True)
-        title = Column(String(100))
+        name = Column(String(20))
+        title = Column(String(100), primary_key=True)
         context = Column(String(10000))
         time = Column(String(20))
+
     # 建立连接，数据库
     engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/FY')
     DBSession = sessionmaker(bind=engine)
@@ -128,8 +129,8 @@ def notice():
     # 表的名字:
         __tablename__ = 'post'
     # 表的结构:
-        name = Column(String(20), primary_key=True)
-        title = Column(String(100))
+        name = Column(String(20))
+        title = Column(String(100), primary_key=True)
         context = Column(String(10000))
         time = Column(String(20))
     # 建立连接，数据库

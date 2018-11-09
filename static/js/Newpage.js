@@ -6,7 +6,7 @@ $(document).click(function (e) {
         data:
             {
                 title:Title,
-                username:LoginName,
+                username:$.cookie("username"),
             },          //向后台传入的参数
         dataType: "json",
         success:function (data)
