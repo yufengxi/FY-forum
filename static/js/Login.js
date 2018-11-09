@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $("#bt2").click(function(){
+        $.cookie("username",null);
         var UserName = $("#username").val();
         var Password=$("#password").val();
         if (UserName===""||Password==="")
@@ -23,12 +24,11 @@ $(document).ready(function () {
                         alert("该用户不存在！！！");
                     }
                     else if (data.result == true) {
-                        LoginName=UserName;
                         alert("登陆成功！！！");
                         $(location).attr('href','/home');
                         $(".changeable a").remove();
-                        $(".changeable").text("Hi,"+LoginName);
-                    }
+                        $.cookie("username",UserName,{expires:1});
+                        }
                     else if (data.result == false){
                         alert("密码错误！！！");
                     }
@@ -39,5 +39,9 @@ $(document).ready(function () {
             });
         }
     });
+    if($.cookie("username")!==null){
+         $(".changeable").text("Hi,"+UserName);
+         $(".changeable").attr("color","#3399cc");
+    }
 
 });
